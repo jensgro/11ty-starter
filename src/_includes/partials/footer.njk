@@ -7,15 +7,14 @@
   {% endif %}
     <ul class="sitefooter__list">
       {% if templateClass != "tmpl-home" %}
-      <li class="getback__link"><a href="{{ '/' | url }}">zurück zur Startseite</a></li>
+      <li class="getback__link"><a href="{{ '/' | url }}">back to homepage</a></li>
       {% endif %}
-      <li><a href="/impressum.html">Impressum</a></li>
-      <li><a href="/kolophon.html">Kolophon</a></li>
-      <li><a href="/bilderrechte.html">Bilderrechte</a></li>
+      <li><a href="/imprint.html">Imprint</a></li>
+      <li><a href="/colophon.html">Colophon</a></li>
     </ul>
   </footer>
 </div>
 
 <div class="container only-print">
-  Ausgedruckt von der Seite: {{metadata.url}}{{ page.url | url }}
+  printed from page: {{metadata.url}}{{ page.url | url }}
 </div>
