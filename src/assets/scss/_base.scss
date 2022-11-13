@@ -46,40 +46,38 @@ body {
   background-color: var(--pageBgColor);
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 1.75;
   font-size: 1rem;
   padding: 0;
   font-family: $systemfonts-sans-serif;
   font-weight: 500;
 }
 
+
+small, .text_small {font-size: 0.8rem;}
+
+// modular type-scale: https://type-scale.com/
 h1, h2, h3, h4, h5, h6 {
-  padding: 0;
+  margin: 3rem 0 1.38rem;
   font-weight: 700;
+  line-height: 1.3;
+  padding: 0;
 }
-
 h1 {
-  font-size: 2.5rem;
+  margin-top: 0;
+  font-size: 3.052rem;
 }
 
-h2 {
-  font-size: 2rem;
-}
+h2 {font-size: 2.441rem;}
 
-h3 {
-  font-size: 1.5rem;
-}
+h3 {font-size: 1.953rem;}
 
-h4 {
-  font-size: 1.25rem;
-}
+h4 {font-size: 1.563rem;}
 
-* + * {
+h5 {font-size: 1.25rem;}
+
+* + *:not(h1, h2, h3, h4, h5, h6) {
   margin-top: $space2;
-}
-
-* + h2 {
-  margin-top: $space3;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
