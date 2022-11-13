@@ -1,0 +1,50 @@
+.nolist {
+  @include nolist;
+}
+
+// .section--categories {
+//   border-top: 5px solid $separator-color;
+// }
+
+// https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/
+// .full-bleed {
+//   width: 100vw;
+//   margin-left: calc(50% - 50vw);
+// }
+
+.bg-wrapper {
+  background-color: $bg-wrapper-bg;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-4 {
+  margin-bottom: $space4;
+}
+
+.only-print {
+  display: none;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+  .only-print {
+    display: block;
+  }
+}
+
+// In diesem Falle mal nicht mobile first
+
+@media (max-width: $md) {
+  .vis-md {
+    @include visuallyhidden;
+  }
+}

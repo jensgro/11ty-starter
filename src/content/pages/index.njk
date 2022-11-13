@@ -1,0 +1,36 @@
+---
+layout: layouts/home.njk
+title: "My title"
+subline: "My subtitle"
+permalink: /index.html
+bodyClass: index
+eleventyNavigation:
+  key: Startseite
+  order: 1
+---
+
+{%- for item in categories %}
+
+    <h2>{{ item.title }}</h2>
+    <ol>
+    {# set variable for counting #}
+    {% set atPost = 0 %}
+    {%- for post in collections.recipesDescending -%}
+      {% if post.data.category == item.url %}
+        {# as long as the count variable is beneath this value ... #}
+        {%- if atPost < 8 -%}
+        <li><a href="{{ post.url | url}}">{{ post.data.title }}</a></li>
+        {%- endif -%}
+        {% set atPost = atPost + 1 %}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- for post in collections.infosDescending -%}
+      {% if post.data.category == item.url %}
+        {%- if atPost < 8 -%}
+        <li><a href="{{ post.url | url}}">{{ post.data.title }}</a></li>
+        {%- endif -%}
+        {% set atPost = atPost + 1 %}
+      {%- endif -%}
+    {%- endfor -%}
+    </ol>
+{% endfor -%}

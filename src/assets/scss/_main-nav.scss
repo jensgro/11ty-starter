@@ -1,0 +1,44 @@
+.main-nav {
+  background-color: var(--categoryColor);
+
+  .container {
+    background-color: var(--categoryColor);
+  }
+
+  &__nav {
+    @include nolist;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space2;
+    padding-inline: $space1;
+
+  }
+
+  &__item {
+    background-color: var(--inactiveNavBg);
+    text-transform: capitalize;
+
+    &:first-of-type {
+      margin-right: auto;
+    }
+
+  }
+
+  &__link {
+    display: inline-block;
+    color: $black;
+    text-decoration: none;
+    padding: $space1;
+
+    &:hover,
+    &:focus {
+      background-color: var(--inactiveNavBgHover);
+    }
+
+    &--active {
+      background-color: var(--activeNavBG);
+      color: var(--activeNavText);
+      font-weight: 700;
+    }
+  }
+}

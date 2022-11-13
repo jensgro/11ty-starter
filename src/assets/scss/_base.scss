@@ -1,0 +1,156 @@
+// The CSS custom properties
+
+:root {
+  --categoryColor: #000;
+  --categoryTextColor: #fff;
+  --inactiveNavBg: #cecece;
+  --inactiveNavBgHover: #fd8700;
+  --activeNavBG: #fff;
+  --activeNavText: #000;
+}
+
+.home {
+  --categoryColor: #{$color-index};
+  --categoryColorLight: #{lighten($color-index, 20%)};
+  --categoryColorDark: #{darken($color-index, 20%)};
+}
+
+.hauptgerichte {
+  --categoryColor: #{$color-hauptgerichte};
+  --categoryColorLight: #{lighten($color-hauptgerichte, 20%)};
+  --categoryColorDark: #{darken($color-hauptgerichte, 20%)};
+}
+
+.beilagen {
+  --categoryColor: #{$color-beilagen};
+  --categoryColorLight: #{lighten($color-beilagen, 10%)};
+  --categoryColorDark: #{darken($color-beilagen, 20%)};
+}
+
+.sonstiges {
+  --categoryColor: #{$color-sonstiges};
+  --categoryColorLight: #{lighten($color-sonstiges, 10%)};
+  --categoryColorDark: #{darken($color-sonstiges, 20%)};
+}
+
+.wissenswertes {
+  --categoryColor: #{$color-wissenswertes};
+  --categoryColorLight: #{lighten($color-wissenswertes, 20%)};
+  --categoryColorDark: #{darken($color-wissenswertes, 20%)};
+}
+
+// A modified version of Andy Bell's "modern reset" https://github.com/hankchizljaw/modern-css-reset
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0 0 $space2 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  padding: 0;
+  /* System Fonts as used by GitHub */
+  font-family: $systemfonts2;
+  font-weight: 500;
+  color: $darkgray;
+  background-color: $page-bg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: "Ubuntu Medium", $systemfonts2;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+p + h2, ul + h2, ol + h2 {
+  margin-top: $space3;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+a {
+  color: $link-color;
+
+  &:hover, &:focus {
+    color: $link-color-hover;
+  }
+}
+
+/* Make images easier to work with */
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* hide only visually */
+/* https://gist.github.com/jensgro/743c37c3c1b226f7917fa0fc0825e3c2 */
+.visuallyhidden {
+  @include visuallyhidden;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Avoid visible focus style on focusable elements like main */
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0 !important;
+}

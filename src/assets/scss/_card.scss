@@ -1,0 +1,97 @@
+.card {
+  border: 2px solid var(--categoryColor);
+  margin-bottom:  $space4;
+
+  &__head {
+    background-color: var(--categoryColor);
+    padding: $space2;
+  }
+
+  &__headline {
+    color: var(--categoryTextColor);
+    margin-bottom: 0;
+
+    mark {
+      padding-inline: $space1;
+    }
+  }
+
+  &__body {
+    padding: $space3 $space2;
+  }
+
+  &__items {
+    margin-left: $space1;
+
+    @media (min-width: $md) {
+      columns: 2;
+    }
+
+    @media (min-width: $lg) {
+      columns: 3;
+    }
+
+    li {
+      padding: $space1;
+    }
+
+    a {
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 0;
+    border: 2px solid var(--categoryColor);
+    margin-top: $space2;
+
+    a {
+      display: block;
+      padding-right: $space2;
+      text-decoration: none;
+      color: var(--categoryTextColor);
+      background-color: var(--categoryColor);
+    }
+
+    &:hover, &:focus {
+      --categoryColor: var(--categoryColorLight);
+      --categoryTextColor: var(--categoryColorDark);
+    }
+  }
+
+  &__arrow {
+    display: inline-block;
+    padding: $space1 $space2;
+    background-color: var(--categoryColorLight);
+    color: var(--categoryTextColor);
+    margin-right: $space1;
+
+    &:hover, &:focus {
+      background-color: var(--categoryColor);
+    }
+  }
+
+  &__item--block {
+    padding: $space1 $space2;
+    border: 2px solid var(--categoryColor);
+    background: $lightgray;
+    page-break-inside: avoid;
+    break-inside: avoid;
+
+    &:hover, &:focus {
+      background-color: $lightergrey;
+    }
+
+    & + & {
+      margin-top: $space2;
+    }
+
+    a {
+      text-decoration: none;
+      display: block;
+    }
+  }
+}

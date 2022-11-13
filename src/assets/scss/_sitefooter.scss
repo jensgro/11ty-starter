@@ -1,0 +1,37 @@
+.sitefooter {
+  border-top: 2px solid $blue2;
+  padding: $space2 0;
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .getback__link {
+      margin-left: 0;
+      margin-bottom: $space2;
+      flex: 1 0 100%;
+
+      @media (min-width: $md) {
+        margin-right: auto;
+        flex-basis: auto;
+      }
+    }
+
+    li {
+      margin-right: $space4;
+    }
+  }
+
+  .home & {
+    li:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.sitefooter.sitefooter--home {
+  .sitefooter__list {
+    justify-content: flex-end;
+  }
+}
