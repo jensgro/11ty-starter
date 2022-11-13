@@ -5,7 +5,7 @@ subline: "My subtitle"
 permalink: /index.html
 bodyClass: index
 eleventyNavigation:
-  key: Startseite
+  key: home
   order: 1
 ---
 
@@ -15,17 +15,9 @@ eleventyNavigation:
     <ol>
     {# set variable for counting #}
     {% set atPost = 0 %}
-    {%- for post in collections.recipesDescending -%}
+    {%- for post in collections.postDescending -%}
       {% if post.data.category == item.url %}
         {# as long as the count variable is beneath this value ... #}
-        {%- if atPost < 8 -%}
-        <li><a href="{{ post.url | url}}">{{ post.data.title }}</a></li>
-        {%- endif -%}
-        {% set atPost = atPost + 1 %}
-      {%- endif -%}
-    {%- endfor -%}
-    {%- for post in collections.infosDescending -%}
-      {% if post.data.category == item.url %}
         {%- if atPost < 8 -%}
         <li><a href="{{ post.url | url}}">{{ post.data.title }}</a></li>
         {%- endif -%}
