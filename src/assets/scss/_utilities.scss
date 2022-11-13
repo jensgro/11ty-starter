@@ -13,7 +13,7 @@
 // }
 
 .bg-wrapper {
-  background-color: $bg-wrapper-bg;
+  background-color: get-color(grey);
 }
 
 .pb-0 {

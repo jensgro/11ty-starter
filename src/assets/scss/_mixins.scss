@@ -27,3 +27,32 @@
   position: absolute;
   white-space: nowrap;
 }
+
+// Color Function
+// https://gist.github.com/lewismcarey/de2a70fe93ab235ba103
+@function get-color( $color, $shade: 'base', $map : $custom-colors ){
+  // check color exists
+  @if (map-has-key($map, $color)) {
+    $value: map-get($map, unquote($color));
+    // check if color or map
+    @if type-of($value) == color {
+      // return color
+      @return $value;
+    }
+    // check shade of color exists
+    @if (map-has-key($value, $shade)) {
+      // return shade of color
+      @return map-get($value, $shade);
+    }
+  }
+  // else do nothing
+  @return null;
+}
+
+@mixin cssvars($vars, $target: ":root") {
+  #{$target} {
+      @each $name, $value in $vars {
+          --#{$name}: #{$value};
+      }
+  }
+}

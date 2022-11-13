@@ -1,43 +1,13 @@
-// The CSS custom properties
+// The custom properties for :root
+$root-vars: (
+  textColor: #{get-color("black")},
+  pageBgColor: #{get-color("white")},
+  linkColor: #{get-color("red", my)},
+  linkColorHover: #{lighten(get-color("red", my), 10%)},
+);
 
-:root {
-  --categoryColor: #000;
-  --categoryTextColor: #fff;
-  --inactiveNavBg: #cecece;
-  --inactiveNavBgHover: #fd8700;
-  --activeNavBG: #fff;
-  --activeNavText: #000;
-}
+@include cssvars($root-vars);
 
-.home {
-  --categoryColor: #{$color-index};
-  --categoryColorLight: #{lighten($color-index, 20%)};
-  --categoryColorDark: #{darken($color-index, 20%)};
-}
-
-.hauptgerichte {
-  --categoryColor: #{$color-hauptgerichte};
-  --categoryColorLight: #{lighten($color-hauptgerichte, 20%)};
-  --categoryColorDark: #{darken($color-hauptgerichte, 20%)};
-}
-
-.beilagen {
-  --categoryColor: #{$color-beilagen};
-  --categoryColorLight: #{lighten($color-beilagen, 10%)};
-  --categoryColorDark: #{darken($color-beilagen, 20%)};
-}
-
-.sonstiges {
-  --categoryColor: #{$color-sonstiges};
-  --categoryColorLight: #{lighten($color-sonstiges, 10%)};
-  --categoryColorDark: #{darken($color-sonstiges, 20%)};
-}
-
-.wissenswertes {
-  --categoryColor: #{$color-wissenswertes};
-  --categoryColorLight: #{lighten($color-wissenswertes, 20%)};
-  --categoryColorDark: #{darken($color-wissenswertes, 20%)};
-}
 
 // A modified version of Andy Bell's "modern reset" https://github.com/hankchizljaw/modern-css-reset
 
@@ -48,12 +18,20 @@
   box-sizing: border-box;
 }
 
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
 /* Remove default margin */
 body,
 h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 figure,
 blockquote,
@@ -62,59 +40,60 @@ dd {
   margin: 0 0 $space2 0;
 }
 
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
 /* Set core body defaults */
 body {
+  color: var(--textColor);
+  background-color: var(--pageBgColor);
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-size: 1.25rem;
+  font-size: 1rem;
   padding: 0;
-  /* System Fonts as used by GitHub */
-  font-family: $systemfonts2;
+  font-family: $systemfonts-sans-serif;
   font-weight: 500;
-  color: $darkgray;
-  background-color: $page-bg;
 }
 
 h1, h2, h3, h4, h5, h6 {
   padding: 0;
-}
-
-h1, h2 {
-  font-family: "Ubuntu Medium", $systemfonts2;
+  font-weight: 700;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h2 {
+  font-size: 2rem;
+}
+
+h3 {
   font-size: 1.5rem;
 }
 
-p + h2, ul + h2, ol + h2 {
+h4 {
+  font-size: 1.25rem;
+}
+
+* + * {
+  margin-top: $space2;
+}
+
+* + h2 {
   margin-top: $space3;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+  @include nolist;
 }
 
 a {
-  color: $link-color;
+  color: var(--linkColor);
 
-  &:hover, &:focus {
-    color: $link-color-hover;
+  &:hover, &:focus-visible {
+    color: var(--linkColorHover);
+    text-decoration: dotted;
   }
 }
 

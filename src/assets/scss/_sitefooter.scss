@@ -1,5 +1,7 @@
 .sitefooter {
-  border-top: 2px solid $blue2;
+  --borderTopColor: #{get-color(blue, medium)};
+
+  border-top: 2px solid var(--borderTopColor);
   padding: $space2 0;
 
   &__list {

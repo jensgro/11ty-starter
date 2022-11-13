@@ -1,12 +1,17 @@
-.main-nav {
-  background-color: var(--categoryColor);
+$nav-vars: (
+  mainNavBgCol: #{get-color("grey", dark)},
+  mainNavItemText: #{get-color("black")},
+  mainNavItemBgCol: #{get-color("white")},
+  inactiveNavBgHover: #{get-color("grey")},
+  activeNavBG: #{get-color("red", my)},
+  activeNavText: #{get-color("white")},
+);
+@include cssvars($nav-vars, ".main-nav");
 
-  .container {
-    background-color: var(--categoryColor);
-  }
+.main-nav {
+  background-color: var(--mainNavBgCol);
 
   &__nav {
-    @include nolist;
     display: flex;
     flex-wrap: wrap;
     gap: $space2;
@@ -15,7 +20,8 @@
   }
 
   &__item {
-    background-color: var(--inactiveNavBg);
+    color: var(--mainNavItemText);
+    background-color: var(--mainNavItemBgCol);
     text-transform: capitalize;
 
     &:first-of-type {
@@ -26,7 +32,7 @@
 
   &__link {
     display: inline-block;
-    color: $black;
+    color: currentColor;
     text-decoration: none;
     padding: $space1;
 

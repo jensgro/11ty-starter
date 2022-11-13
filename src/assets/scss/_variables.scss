@@ -1,13 +1,13 @@
-// ============= Abstände
-$p05: 3px;
+// ============= spaces ==> for margin and padding
 $space1: 6px;
 $space2: $space1 * 2;
 $space3: $space1 * 3;
 $space4: $space1 * 4;
 $space5: $space1 * 5;
 $space6: $space1 * 6;
+$space05: $space1 * 0.5;
 
-// Gap für Flexbox und Grid
+// Gap for flexbox and grid
 $gap: 20px;
 $gap2: $gap * 2;
 
@@ -20,70 +20,74 @@ $maxwidth: 1120px;
 // =============== Fonts
 $systemfonts1: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 $systemfonts2: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$systemfonts-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+$systemfonts-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+$systemfonts-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 
 // ======= Farben
-$black: #000;
+$custom-colors: (
+  "black": (
+    "base": #000
+  ),
+  "white": (
+    "base": #fff,
+    "nearly": #fafafa
+  ),
+  "brown": (
+    "base": brown,
+    "medium": sandybrown
+  ),
+  "orange": (
+    "base": #fd8700,
+    "medium":#ffb30e,
+    "light": #ffe0a5
+  ),
+  "yellow": (
+    "base": yellow,
+    "light": #ffc
+  ),
+  "red": (
+    "base": #C5004A,
+    "my": #a20000,
+    "dark": #7F0036
+  ),
+  "grey": (
+    "base": #c0c0c0,
+    "light": #e0e0e0,
+    "lighter": #f7f7f7,
+    "dark": #333,
+    "darker": #aaa,
+  ),
+  "blue": (
+    "base": #0b4396,
+    "light1": #a0cbe4,
+    "light2": #c0e7fe,
+    "medium": #0277BD,
+    "dark": #082840,
+    "navy": #17050F
+  ),
+  green: (
+    "base": teal
+  )
+);
 
-$brown: brown;
 
-$orange: #fd8700;
-$orange2: #ffb30e;
-$lightorange: #ffe0a5;
-
-$red: #C5004A;
-$myred: #a20000;
-$darkred: #7F0036;
-
-$lightergrey: #f7f7f7;
-$lightgray: #e0e0e0;
-$gray: #C0C0C0;
-$darkgray: #333;
-$darkergrey: #aaa;
-
-$navy: #17050F;
-$mediumblue: #0277BD;
-$lightblue: #a0cbe4;
-$lightblue2: #c0e7fe;
-$blue: #082840;
-$blue2: #0b4396;
-
-$lightyellow: #ffc;
-$brown1: sandybrown;
-
-$nearlywhite: #fafafa;
-$white: #fff;
-
-$maincolor: $mediumblue; // $orange2
-
-// ==== Farben Angie
-$color-angie-1: #242329;
-$color-angie-2: #a20000;
-$color-angie-3: #d4d432;
-$color-angie-4: #5d4224;
-$color-angie-5: #c3bfae;
-
-// ==================================
-
-// $color-index: $color-angie-1;
-// $color-hauptgerichte: $color-angie-2;
-// $color-beilagen: $color-angie-3;
-// $color-sonstiges: $color-angie-4;
-// $color-wissenswertes: $color-angie-5;
-
-$color-index: #6F4E37;
-$color-hauptgerichte: #A66626;
-$color-beilagen:  teal; //#4682B4
-$color-sonstiges: #757500;
-$color-wissenswertes: #727572;
-
-$link-color: $blue;
-$link-color-hover: $black;
-
-$page-bg: $white;
-
-$bg-wrapper-bg: $white;
+$page-bgcolor: get-color(white);
+$textcolor: get-color(black);
+$link-color: get-color(red);
+$link-color-hover: get-color(black);
 
 $siteheader-headline-cnt-bg: rgba(0,0,0,0.5);
 $siteheader-headline-cnt-color: #fafafa;
 
+$black:get-color("black");
+$white: get-color("white");
+$nearlywhite: get-color("white", nearly);
+$brown: get-color("brown");
+$mediumbrown: get-color("brown", medium);
+$red: get-color("red");
+$myred: get-color("red", my);
+$grey: get-color("grey");
+$darkgrey: get-color("grey", dark);
+$darkergrey: get-color("grey", darker);
 

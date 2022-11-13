@@ -1,0 +1,11 @@
+$btn-vars: (
+  btn-primary-text-color: #{get-color("black")},
+  btn-secondary-text-color: #{get-color("grey", dark)},
+  btn-border-radius: 4px,
+  btn-text-transform: uppercase,
+  btn-font-size: 1rem,
+  btn-font-weight: 600,
+  btn-padding: $space1 $space3,
+);
+
+@include cssvars($btn-vars, ".btn");
