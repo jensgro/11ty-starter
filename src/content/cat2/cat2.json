@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/post.njk",
+  "permalink": "cat2/{{title | slugify}}.html",
+  "bodyClass": "cat2",
+  "tags": "cat2"
+}

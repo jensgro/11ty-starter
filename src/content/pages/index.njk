@@ -10,19 +10,29 @@ eleventyNavigation:
 ---
 
 {%- for item in categories %}
-
     <h2>{{ item.title }}</h2>
-    <ol>
-    {# set variable for counting #}
-    {% set atPost = 0 %}
-    {%- for post in collections.postDescending -%}
-      {% if post.data.category == item.url %}
-        {# as long as the count variable is beneath this value ... #}
-        {%- if atPost < 8 -%}
-        <li><a href="{{ post.url | url}}">{{ post.data.title }}</a></li>
-        {%- endif -%}
-        {% set atPost = atPost + 1 %}
-      {%- endif -%}
-    {%- endfor -%}
-    </ol>
+    {% if "post" in item.cat %}
+      {% for post in collections.post %}
+        {% if loop.first %}<ul>{% endif %}
+          {% include "partials/link-list-item.njk" %}
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if "category2" in item.cat %}
+      {% for post in collections.cat2 %}
+        {% if loop.first %}<ul>{% endif %}
+          {% include "partials/link-list-item.njk" %}
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if "category3" in item.cat %}
+      {% for post in collections.cat3 %}
+        {% if loop.first %}<ul>{% endif %}
+          {% include "partials/link-list-item.njk" %}
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+    {% endif %}
+
 {% endfor -%}
