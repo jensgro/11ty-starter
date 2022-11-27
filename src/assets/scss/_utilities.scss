@@ -2,15 +2,11 @@
   @include nolist;
 }
 
-// .section--categories {
-//   border-top: 5px solid $separator-color;
-// }
-
 // https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/
-// .full-bleed {
-//   width: 100vw;
-//   margin-left: calc(50% - 50vw);
-// }
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
 
 .bg-wrapper {
   background-color: get-color(grey);
@@ -26,6 +22,10 @@
 
 .mb-4 {
   margin-bottom: $space4;
+}
+
+.mt-4 {
+  margin-top: $space4;
 }
 
 .only-print {
