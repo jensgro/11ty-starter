@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ renderData.title or title or metadata.title }}</title>
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url  }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
   </head>
   {% if  bodyClass == "index" %}
-    {% set class = "home" %}
+    {% set class = "index" %}
   {% elif bodyClass == "post" %}
     {% set class = "post" %}
   {% elif category == "tags" %}
