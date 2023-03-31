@@ -37,6 +37,7 @@
   @return null;
 }
 
+// transform a list of Sass-variables into custom properties
 @mixin cssvars($vars, $target: ":root") {
   #{$target} {
       @each $name, $value in $vars {
