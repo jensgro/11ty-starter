@@ -5,6 +5,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+
 // filters
 const htmlDateString = require("./src/_11ty/filters/date.js").htmlDateString;
 const head = require("./src/_11ty/filters/head.js");
@@ -26,8 +27,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setDataDeepMerge(true);
 
-  eleventyConfig.addPassthroughCopy({"./src/assets/img": "/img"});
-  eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy({"./src/assets/img": "assets/img"});
   // eleventyConfig.addPassthroughCopy({"./src/assets/scss/fonts": "css/fonts"});
   eleventyConfig.addPassthroughCopy({"./src/static/":"/"});
 
@@ -42,21 +42,9 @@ module.exports = function(eleventyConfig) {
     permalinkSymbol: "#"
   });
 
-   // Browsersync Overrides
-  eleventyConfig.setBrowserSyncConfig({
-    callbacks: {
-      ready: function(err, browserSync) {
-        const content_404 = fs.readFileSync('_site/404.html');
-
-        browserSync.addMiddleware("*", (req, res) => {
-          // Provides the 404 content without redirect.
-          res.write(content_404);
-          res.end();
-        });
-      },
-    },
-    ui: false,
-    ghostMode: false
+  eleventyConfig.setServerOptions({
+    showAllHosts: true,
+    showVersion: true
   });
 
   return {
