@@ -69,11 +69,8 @@ h1 {
 }
 
 h2 {font-size: 2.441rem;}
-
 h3 {font-size: 1.953rem;}
-
 h4 {font-size: 1.563rem;}
-
 h5 {font-size: 1.25rem;}
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -91,11 +88,11 @@ a {
 }
 
 /* Make images easier to work with */
-img {
+img, svg, video {
+  display: block;
   width: 100%;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
