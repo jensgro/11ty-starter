@@ -9,3 +9,12 @@ $btn-vars: (
 );
 
 @include cssvars($btn-vars, ".btn");
+
+.btn {
+  color: var(--primary-text-color);
+  border-radius: var(--btn-border-radius);
+  text-transform: var(--btn-text-transform);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  padding: var(--btn-padding);
+}
