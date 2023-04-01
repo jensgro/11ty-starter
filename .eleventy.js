@@ -5,14 +5,22 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+const configPath = "./src/_11ty/";
+
+// module import shortcodes
+const {
+  imageShortcodePlaceholder,
+  includeRaw,
+  liteYoutube
+} = require(configPath+'shortcodes/index.js');
 
 // filters
-const htmlDateString = require("./src/_11ty/filters/date.js").htmlDateString;
-const head = require("./src/_11ty/filters/head.js");
+const htmlDateString = require(configPath+"filters/date.js").htmlDateString;
+const head = require(configPath+"filters/head.js");
 
 // collections
-const post = require("./src/_11ty/collections/post.js");
-const postDescending = require("./src/_11ty/collections/postDescending.js");
+const post = require(configPath+"collections/post.js");
+const postDescending = require(configPath+"collections/postDescending.js");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
@@ -26,6 +34,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("postDescending", postDescending);
 
   eleventyConfig.setDataDeepMerge(true);
+
+  // 	--------------------- Custom shortcodes ---------------------
+  eleventyConfig.addNunjucksAsyncShortcode('imagePlaceholder', imageShortcodePlaceholder);
+  eleventyConfig.addShortcode('youtube', liteYoutube);
+  eleventyConfig.addShortcode('include_raw', includeRaw);
+  eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`); // current year, stephanie eckles
+  eleventyConfig.addShortcode('packageVersion', () => `v${packageVersion}`);
 
   // 	--------------------- Passthrough File Copy -----------------------
   // especially for favion, maybe for a robots.txt and a .htaccess
