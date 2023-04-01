@@ -1,5 +1,9 @@
+@use "sass:math";
+@import "functions";
 @import "mixins";
 @import "variables";
+
+@import "fonts";
 @import "base";
 @import "layout";
 @import "main-nav";

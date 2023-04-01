@@ -27,9 +27,13 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setDataDeepMerge(true);
 
-  eleventyConfig.addPassthroughCopy({"./src/assets/img": "assets/img"});
-  // eleventyConfig.addPassthroughCopy({"./src/assets/scss/fonts": "css/fonts"});
+  // 	--------------------- Passthrough File Copy -----------------------
+  // especially for favion, maybe for a robots.txt and a .htaccess
   eleventyConfig.addPassthroughCopy({"./src/static/":"/"});
+
+  eleventyConfig.addPassthroughCopy({"./src/assets/img": "assets/img"});
+  eleventyConfig.addPassthroughCopy({"./src/assets/js": "assets/js"});
+  // eleventyConfig.addPassthroughCopy({"./src/assets/fonts": "assets/fonts"});
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
