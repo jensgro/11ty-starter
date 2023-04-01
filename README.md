@@ -2,9 +2,7 @@
 
 The standard-language of the templates is set on German. Please change it in the data-file "metadata.json", when necessary.
 
-I included Bootstrap into the package.json - just in case.
-
-The structure of the project was choesen after [watching a talk](https://www.youtube.com/watch?v=boZiLtx8p3Q) by Jérôme Coupé, He wrote is thoughts down in short and (in my view) important article: [Structuring Eleventy projects](https://www.webstoemp.com/blog/eleventy-projects-structure/)
+The structure of the project was choesen after [watching a talk](https://www.youtube.com/watch?v=boZiLtx8p3Q) by Jérôme Coupé, He wrote is thoughts down in a short and (in my view) important article: [Structuring Eleventy projects](https://www.webstoemp.com/blog/eleventy-projects-structure/)
 ## The variables in the frontmatter (or *.json)
 
 - ``layout`` defines the used layout-file.
