@@ -1,11 +1,26 @@
 ---
 tags:
-  - javascript
-  - css
-  - "noch was"
+  - video
 
-title: "My third post"
+title: A post with a video
 headerImage: "875x250-myred.png"
+youtube: true
 ---
-## That's Markdown
+## Include a video with a shortcode
 
+{% youtube 'rg7Fvvl3taU', 'Kevin Powell - Learn CSS Grid the easy way' %}
+
+
+This video is included this way:
+
+{% raw %}
+````
+{% youtube 'rg7Fvvl3taU', 'Kevin Powell - Learn CSS Grid the easy way' %}
+````
+{% endraw %}
+
+And it is very important to add a variable to the frontmatter:
+
+````md
+youtube: true
+````

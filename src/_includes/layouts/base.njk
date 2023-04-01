@@ -13,5 +13,10 @@
       {% include "partials/site-header.njk" %}
       {{ content | safe }}
       {% include "partials/footer.njk" %}
+
+    <!-- youtube if actvated in yaml -->
+    {% if youtube %}
+    <script type="module" src="/assets/js/lite-youtube.min.js"></script>
+    {% endif %}
   </body>
 </html>
