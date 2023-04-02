@@ -10,7 +10,7 @@ const imageShortcodePlaceholder = async (src, alt, caption, sizes = '100vw') => 
   let metadata = await Image(src, {
     widths: [400, 700, 1280],
     formats: ['avif', 'webp', 'jpeg'],
-    urlPath: '/assets/img/',
+    urlPath: '.src/assets/img/',
     outputDir: './_site/assets/img/',
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src);
@@ -42,7 +42,7 @@ const imageShortcodePlaceholder = async (src, alt, caption, sizes = '100vw') => 
       })
       .join('\n')}
       <img
-        src="/assets/img/image-placeholder.png"
+        src="./src/assets/img/image-placeholder.png"
         data-src="${lowsrc.url}"
         width="${lowsrc.width}"
         height="${lowsrc.height}"

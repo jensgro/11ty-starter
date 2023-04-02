@@ -19,8 +19,5 @@ This video is included this way:
 ````
 {% endraw %}
 
-And it is very important to add a variable to the frontmatter:
+And it is very important to add ``youtube: true`` to the frontmatter.
 
-````md
-youtube: true
-````
