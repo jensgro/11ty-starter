@@ -1,8 +1,8 @@
 const fs = require("fs");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
+// const markdownIt = require("markdown-it");
+// const markdownItAnchor = require("markdown-it-anchor");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const configPath = "./src/_11ty/";
@@ -21,6 +21,9 @@ const head = require(configPath+"filters/head.js");
 // collections
 const post = require(configPath+"collections/post.js");
 const postDescending = require(configPath+"collections/postDescending.js");
+
+// plugins
+const markdownLib = require(configPath+'plugins/markdown.js');
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
@@ -50,16 +53,21 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"./src/assets/js": "assets/js"});
   eleventyConfig.addPassthroughCopy({"./src/assets/fonts": "assets/fonts"});
 
-  /* Markdown Overrides */
-  let markdownLibrary = markdownIt({
-    html: true,
-    breaks: true,
-    linkify: true
-  }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: "#"
-  });
+  // 	--------------------- Plugins ---------------------
+  eleventyConfig.setLibrary('md', markdownLib);
+
+
+
+  // /* Markdown Overrides */
+  // let markdownLibrary = markdownIt({
+  //   html: true,
+  //   breaks: true,
+  //   linkify: true
+  // }).use(markdownItAnchor, {
+  //   permalink: true,
+  //   permalinkClass: "direct-link",
+  //   permalinkSymbol: "#"
+  // });
 
   eleventyConfig.setServerOptions({
     showAllHosts: true,
