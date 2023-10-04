@@ -1,9 +1,20 @@
-<!-- ====== Header -->
-{% if templateClass == "tmpl-home" %}
-  {% include "partials/site-header/home.njk" %}
+{% if bgwrapper %}
+<div class="bg-wrapper">
 {% endif %}
-
-{% if templateClass == "tmpl-post" %}
-  {% include "partials/site-header/post.njk" %}
+  <div class="container{%if headerClass%} headerClass{% endif %}">
+    <header class="siteheader">
+      <!-- 7:2 -->
+      {%- if headerImage -%}
+     <img class="no-print" src="/assets/img/{{headerImage}}" alt="" width="875" height="250">
+     {%- endif -%}
+     <div class="siteheader__headline-cnt">
+        <h1 class="siteheader__headline">{{ title }}</h1>
+        {% if subline %}
+        <p class="siteheader__subline">{{ subline }}</p>
+        {% endif %}
+     </div>
+    </header>
+  </div>
+{% if bgwrapper %}
+</div>
 {% endif %}
-<!-- END ======= Header -->

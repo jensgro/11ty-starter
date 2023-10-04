@@ -1,10 +1,12 @@
 # Simple Starter-Kit for 11ty
 
+This starter-template has little to no styling - on purpose. It assembles some clever solutions and basic structuring of an eleventy-site. It is a starter point with working Sass transforamtion and many more. But styling, structure and templating is individually. So this project stops before getting too much sold into designing.
+
 The standard-language of the templates is set on German. Please change it in the data-file "metadata.json", when necessary.
 
-I included Bootstrap into the package.json - just in case.
+The structure of the project was chosen after [watching a talk](https://www.youtube.com/watch?v=boZiLtx8p3Q) by Jérôme Coupé, He wrote is thoughts down in a short and (in my view) important article: [Structuring Eleventy projects](https://www.webstoemp.com/blog/eleventy-projects-structure/)
 
-The structure of the project was choesen after [watching a talk](https://www.youtube.com/watch?v=boZiLtx8p3Q) by Jérôme Coupé, He wrote is thoughts down in short and (in my view) important article: [Structuring Eleventy projects](https://www.webstoemp.com/blog/eleventy-projects-structure/)
+Some soultions like the shortcodes and some filters were taken from the great starter project [eleventy excellent](https://github.com/madrilene/eleventy-excellent) by  [Lene Saile](https://www.lenesaile.com/).
 ## The variables in the frontmatter (or *.json)
 
 - ``layout`` defines the used layout-file.

@@ -1,4 +1,4 @@
 ---
-title: "My first post in cat3"
+title: "My third post in cat2"
 headerImage: "875x250-blue.png"
 ---
