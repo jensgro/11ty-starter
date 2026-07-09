@@ -1,0 +1,55 @@
+:root {
+  --space-1: 6px;
+  --space-2: calc(var(--space-1)*2);
+  --space-3: calc(var(--space-1)*3);
+  --space-4: calc(var(--space-1)*4);
+  --space-5: calc(var(--space-1)*5);
+  --space-6: calc(var(--space-1)*6);
+  --padding: 1rem;
+
+  --body-width: 80%;
+  --maxwidth: 1120px;
+  --box-shadow-1: 1px 1px 5px rgba(0, 0, 0, 0.5);
+
+  --lightgrey: #efefef;
+  --myred: #a20000;
+  --eggshell: #e6e3d4;
+  --ash-grey: #b3cbb9;
+  --pearl: #ddd8b8;
+  --ultra-violet: #6a66a3;
+  --eminence: #542e71;
+
+  --black-base: #000;
+  --white-base: #fff;
+  --white-nearly: #fafafa;
+  --brown-base: brown;
+  --brown-medium: sandybrown;
+  --orange-base: #fd8700;
+  --orange-medium: #ffb30e;
+  --orange-light: #ff30a5;
+  --yellow-base: yellow;
+  --yellow-loght: #ffc;
+  --red-base: #c5004a;
+  --red-my: #a20000;
+  --red-dark: #7f0036;
+  --grey-base: #c0c0c0;
+  --grey-light: #e0e0e0;
+  --grey-lighter: #f7f7f7;
+  --grey-dark: #333;
+  --grey-darker: #aaa;
+  --blue-base: #0b4396;
+  --blue-light1: #a0cbe4;
+  --blue-light2: #c0e7fe;
+  --blue-medium: #0277BD;
+  --blue-dark: #082840;
+  --blue-navy: #17050F;
+  --green-base: teal;
+
+  --primary-text-color: var(--black-base);
+  --btn-secondary-text-color: var(--grey-dark);
+  --btn-border-radius: 4px;
+  --btn-text-transform: uppercase;
+  --btn-font-size: 1rem;
+  --btn-font-weight: 600;
+  --btn-padding: var(var(--space-1) var(var(--space-3)))
+}

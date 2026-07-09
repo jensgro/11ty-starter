@@ -1,0 +1,32 @@
+.siteheader {
+  --headline-bgcolor: rgba(0, 0, 0, 0.125);
+  --headline-color: var(--white-base);
+
+  aspect-ratio: 7 / 2;
+  position: relative;
+
+  @media print {
+    aspect-ratio: auto;
+  }
+}
+  .siteheader__headline,
+  .siteheader__subline {
+    margin-bottom: 0;
+  }
+
+    .siteheader__headline-cnt {
+    position: static;
+    padding: var(--space-2) var(--space-4) var(--space-2) var(--space-2);
+    color: var(--headline-color);
+    background-color: var(--headline-bgcolor);
+
+    @media (min-width: 800px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @media print {
+      position: static;
+    }
+  }

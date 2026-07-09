@@ -1,0 +1,79 @@
+.hint {
+    background-color: #e1e1e1;
+    padding: 10px;
+    margin-block: 40px 20px;
+    width: fit-content;
+}
+
+.max400 {
+    max-width: 400px;
+}
+
+.max600 {
+    max-width: 600px;
+}
+
+.max800 {
+    max-width: 800px;
+}
+
+.max1000 {
+    max-width: 1000px;
+}
+
+.two-column {
+    column-count: 2;
+    column-gap: 40px;
+}
+
+.two-col-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr));
+    gap: 2rem max(5vw, 2rem);
+}
+
+.nolist {
+  list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/ */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.bg-wrapper {
+  background-color: get-color(grey);
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-4 {
+  margin-bottom: var(--space4);
+}
+
+.mt-4 {
+  margin-top: var(--space4);
+}
+
+.only-print {
+  display: none;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  .only-print {
+    display: block;
+  }
+}

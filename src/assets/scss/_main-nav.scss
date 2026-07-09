@@ -11,7 +11,7 @@ $nav-vars: (
 .main-nav {
   background-color: var(--mainNavBgCol);
 
-  &__nav {
+  ul {
     display: flex;
     flex-wrap: wrap;
     gap: $space2;
@@ -19,7 +19,7 @@ $nav-vars: (
 
   }
 
-  &__item {
+  li {
     color: var(--mainNavItemText);
     background-color: var(--mainNavItemBgCol);
     text-transform: capitalize;
@@ -30,7 +30,7 @@ $nav-vars: (
 
   }
 
-  &__link {
+  a {
     display: inline-block;
     color: currentColor;
     text-decoration: none;

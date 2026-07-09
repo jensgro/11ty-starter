@@ -1,0 +1,12 @@
+.container {
+  --container-bgcolor: var(--white-base);
+
+  background-color: var(--container-bgcolor);
+  padding: var(--space-2) var(--space-4);
+  margin: 0 var(--space-2);
+
+  @media (min-width: 1000px) {
+    max-width: var(--maxwidth);
+    margin: 0 auto;
+  }
+}
