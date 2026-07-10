@@ -1,5 +1,7 @@
 .main-nav {
   background-color: var(--main-nav-bg);
+  padding: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-4);
 
   ul {
     display: flex;
