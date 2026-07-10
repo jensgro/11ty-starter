@@ -6,8 +6,3 @@
   font-weight: var(--btn-font-weight);
   padding: var(--btn-padding);
 }
-
-.youtube-embed {
-  aspect-ratio: 16 / 9;
-  margin-bottom: var(--space-8);
-}

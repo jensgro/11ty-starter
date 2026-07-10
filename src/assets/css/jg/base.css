@@ -1,37 +1,44 @@
 *,
-::after,
-::before {
+*:after,
+*:before {
   box-sizing: border-box;
 }
-
-html {
-  font-size: 16px;
-}
-
-body {
-  font-size: 1rem;
-  font-family: system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-}
-
-/* ======================================================= */
 
 :where(html) {
   -webkit-text-size-adjust: none;
   color-scheme: dark light;
   tab-size: 2;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
 }
 
 :where(body) {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
   min-height: 100vh;
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-1);
+  font-family: var(--body-family);
+}
+
+:where(main) {
+  width: var(--content-width);
+  margin: 0 auto;
 }
 
 /* === Formulare === */
-:where(button) {
-  all: unset;
+/* :where(button) {
+	all: unset;
+} */
+
+input:not([type='checkbox']):not([type='radio']),
+input[type='range'],
+select,
+button,
+textarea {
+  -webkit-appearance: none;
 }
 
 :where(input, button, textarea, select) {
@@ -42,24 +49,130 @@ body {
 :where(textarea) {
   resize: vertical;
   resize: block;
+  margin-right: 0;
+}
+
+textarea:not([cols]) {
+  width: 100%;
+}
+
+textarea:not([rows]) {
+  min-height: 40px;
+  height: 140px;
+}
+
+:where(input) {
+  vertical-align: top;
+}
+
+:where(label) {
+  vertical-align: middle;
+  margin-bottom: var(--space-05);
+}
+
+input:where([type='submit'], [type='reset'], [type='button'], [type='checkbox'], [type='range'], [type='radio']) {
+  cursor: pointer;
 }
 
 :where(button, label, select, summary, [role='button'], [role='option']) {
   cursor: pointer;
 }
 
-:where(:disabled) {
+:disabled {
   cursor: not-allowed;
+  opacity: 0.7;
 }
 
 :where(label:has(> input:disabled), label:has(+ input:disabled)) {
   cursor: not-allowed;
+  opacity: 0.7;
+}
+
+:where(input, select, label, textarea) {
+  display: block;
+}
+
+:where([type="checkbox"], [type="radio"]) {
+  display: initial;
+  height: 1em;
+  width: 1em;
+}
+
+:where([type="radio"]) {
+  border-radius: 100%;
+}
+
+:where(input, button, textarea, select) {
+  background: var(--surface-1);
+  color: var(--text-1);
+  font-family: inherit;
+  font-size: inherit;
+  margin-right: var(--space-1);
+  margin-bottom: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-1);
+  border-radius: var(--small-radius);
+}
+
+:where(button, [type="submit"], [type="reset"], [type="button"]) {
+  padding-inline: var(--space-2);
+  background: var(--button-bg);
+  color: var(--button-text);
+
+  &:hover,
+  &:focus {
+    background: var(--button-bg-hover);
+  }
+}
+
+:where(select) {
+  background-color: var(--surface-1);
+}
+
+:where(select::-ms-expand) {
+  display: none;
+}
+
+:where(select[multiple]) {
+  padding-right: var(--space-2);
+  overflow-y: auto;
+}
+
+
+:where(input, select, button, textarea):focus {
+  box-shadow: 0 0 0 2px var(--surface-shadow);
+}
+
+:where(input[type='checkbox'], input[type='radio'], input[type='submit'], input[type='reset'], input[type='button'], input[type='range'], button):active {
+  transform: translateY(2px);
+}
+
+:where(::placeholder) {
+  color: var(--form-placeholder);
+}
+
+:where(fieldset) {
+  border: var(--border-1);
+  border-radius: var(--small-radius);
+  margin: 0 0 var(--space-2) 0;
+  padding: var(--space-2);
+}
+
+:where(legend) {
+  font-size: 0.9em;
+  font-weight: var(--bold-weight);
+  padding-inline: var(--space-2);
 }
 
 /* ========== */
 :where(a) {
   color: currentColor;
   text-underline-offset: 0.2ex;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 }
 
 /*
@@ -94,9 +207,9 @@ body {
 }
 
 /* Set a size for SVG's without a width attribute */
-:where(svg):where(:not([width])) {
-  inline-size: 5rem;
-}
+/* :where(svg):where(:not([width])) {
+	inline-size: 5rem;
+} */
 
 
 /* ==== Headlines ======= */
@@ -104,7 +217,6 @@ body {
 :where(h1, h2, h3, h4, h5, h6) {
   text-wrap: balance;
   overflow-wrap: break-word;
-  /* auch für p??? */
 }
 
 /* ================ */
@@ -115,6 +227,33 @@ body {
   color: inherit;
   block-size: 0;
   overflow: visible;
+}
+
+/* ================ */
+
+:where(code, samp, time, kbd) {
+  background: var(--surface-1);
+  color: var(--text-1);
+  padding: var(--space-05) var(--space-1);
+  border-radius: var(--small-radius);
+  font-size: 1em;
+}
+
+:where(pre > code) {
+  padding: var(--space-2);
+  display: block;
+  overflow-x: auto;
+}
+
+:where(var) {
+  color: var(--variable);
+  font-style: normal;
+  font-family: var(--mono-family);
+}
+
+:where(kbd) {
+  padding: var(--space-1);
+  border: var(--border-1);
 }
 
 /* ================ */
@@ -165,5 +304,3 @@ https://keithjgrant.com/posts/2024/01/my-css-resets/
     scroll-behavior: auto !important;
   }
 }
-
-/* ======================================================= */
