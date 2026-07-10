@@ -1,7 +1,7 @@
 .sitefooter {
-  --borderTopColor: var(--blue-500);
+  --sitefooter-border-color: var(--blue-500);
 
-  border-top: 2px solid var(--borderTopColor);
+  border-top: 2px solid var(--sitefooter-border-color);
   padding: var(--space-2) 0;
 
   .index & {

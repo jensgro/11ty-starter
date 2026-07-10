@@ -18,8 +18,15 @@
   text-rendering: optimizeSpeed;
   min-height: 100vh;
   margin: 0;
+  font-size: 1rem;
+  color: var(--text-1);
+  font-family: var(--body-family);
 }
 
+:where(main) {
+  width: var(--content-width);
+  margin: 0 auto;
+}
 /* === Formulare === */
 /* :where(button) {
 	all: unset;
@@ -158,6 +165,10 @@ input:where([type='submit'],[type='reset'],[type='button'],[type='checkbox'],[ty
 :where(a) {
   color: currentColor;
   text-underline-offset: 0.2ex;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
 }
 
 /*
@@ -168,6 +179,10 @@ input:where([type='submit'],[type='reset'],[type='button'],[type='checkbox'],[ty
 :where(ul, ol)[role="list"] {
   list-style-type: "";
   padding-left: 0;
+
+  li::marker {
+    display: none;
+  }
 }
 
 /* ==== Medien ==== */

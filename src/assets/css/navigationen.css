@@ -1,0 +1,14 @@
+.nav-vertical-1 {
+  li {
+    margin-bottom: var(--space-1);
+  }
+}
+
+.nav--grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.level-2 {
+  margin: var(--space-2) 0 var(--space-4) var(--space-4);
+}

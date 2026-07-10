@@ -1,6 +1,4 @@
 .siteheader {
-  --headline-bgcolor: rgba(0, 0, 0, 0.125);
-  --headline-color: var(--white);
 
   aspect-ratio: 7 / 2;
   position: relative;
@@ -18,7 +16,7 @@
     position: static;
     padding: var(--space-2) var(--space-4) var(--space-2) var(--space-2);
     color: var(--headline-color);
-    background-color: var(--headline-bgcolor);
+    background-color: var(--headline-bg);
 
     @media (min-width: 800px) {
       position: absolute;

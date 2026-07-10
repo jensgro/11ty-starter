@@ -4,8 +4,13 @@
   --mono-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
   --accent-family: var(--body-family);
 
-  --body-width: 80%;
-  --max-width: 1120px;
+  /*
+   https: //min-max-calculator.9elements.com/?300,800,320,1200
+  */
+  /* min 300, max 800, viewport 320 - 1200 */
+  /* --content-width: clamp(18.75rem, 7.386rem + 56.82vw, 50rem); */
+  /* min 300, max 1000, viewport 320 - 1200 */
+  --content-width: clamp(18.75rem, 2.841rem + 79.55vw, 62.5rem);
 
   --thin-weight: 100;
   --light-weight: 300;
@@ -37,6 +42,7 @@
   --space-5: calc(var(--space-1)*5);
   --space-6: calc(var(--space-1)*6);
   --padding: 1rem;
+  --gap: 10px;
 
   --square-ratio: 1/1;
   --landscape-ratio: 4/3;
@@ -78,6 +84,17 @@
   --button-text: var(--gray-900);
   --button-bg-hover: var(--gray-400);
   --form-placeholder: var(--gray-400);
+
+  --main-nav-bg: var(--gray-300);
+  --main-nav-item-text: var(--black);
+  --main-nav-item-bg: var(--white);
+  --main-nav-item-active-text: var(--white);
+  --main-nav-item-active-bg: var(--red-600);
+  --main-nav-item-inactive-bg-hover: var(--gray-100);
+
+  --sitefooter-border-color: var(--blue-500);
+  --headline-bg: rgba(0, 0, 0, 0.125);
+  --headline-color: var(--white);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -98,6 +115,18 @@
     --button-text: var(--gray-200);
     --button-bg-hover: var(--gray-700);
     --form-placeholder: var(--gray-400);
+
+    /* TODO */
+    --main-nav-bg: var(--gray-300);
+    --main-nav-item-text: var(--black);
+    --main-nav-item-bg: var(--white);
+    --main-nav-item-active-text: var(--white);
+    --main-nav-item-active-bg: var(--red-600);
+    --main-nav-item-inactive-bg-hover: var(--gray-100);
+
+    --sitefooter-border-color: var(--blue-100);
+    --headline-bg: rgba(0, 0, 0, 0.125);
+    --headline-color: var(--white);
   }
 }
 

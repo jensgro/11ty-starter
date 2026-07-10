@@ -1,13 +1,5 @@
 .main-nav {
-  --mainNavBgCol: var(--gray-300);
-  --mainNavItemText: var(--black);
-  --mainNavItemBgCol: var(--white);
-  --inactiveNavBgHover: var(--grey-base);
-  --activeNavBG: var(--red-600);
-  --activeNavText: var(--white);
-
-  &, .container {background-color: var(--mainNavBgCol);}
-
+  background-color: var(--main-nav-bg);
 
   ul {
     display: flex;
@@ -18,8 +10,8 @@
   }
 
   li {
-    color: var(--mainNavItemText);
-    background-color: var(--mainNavItemBgCol);
+    color: var(---main-nav-item-text);
+    background-color: var(--main-nav-item-bg);
     text-transform: capitalize;
 
     &:first-of-type {
@@ -36,13 +28,13 @@
 
     &:hover,
     &:focus {
-      background-color: var(--inactiveNavBgHover);
+      background-color: var(--main-nav-item-inactive-bg-hover);
     }
   }
 
-  a.active {
-    background-color: var(--activeNavBG);
-    color: var(--activeNavText);
+  a.active, a:active {
+    background-color: var(--main-nav-item-active-bg);
+    color: var(--main-nav-item-active-text);
     font-weight: 700;
   }
 }
