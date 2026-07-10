@@ -6,7 +6,7 @@ The standard-language of the templates is set on German. Please change it in the
 
 The structure of the project was chosen after [watching a talk](https://www.youtube.com/watch?v=boZiLtx8p3Q) by Jérôme Coupé, He wrote is thoughts down in a short and (in my view) important article: [Structuring Eleventy projects](https://www.webstoemp.com/blog/eleventy-projects-structure/)
 
-Some soultions like the shortcodes and some filters were taken from the great starter project [eleventy excellent](https://github.com/madrilene/eleventy-excellent) by  [Lene Saile](https://www.lenesaile.com/).
+Some solutions like the shortcodes and some filters were taken from the great starter project [eleventy excellent](https://github.com/madrilene/eleventy-excellent) by  [Lene Saile](https://www.lenesaile.com/).
 ## The variables in the frontmatter (or *.json)
 
 - ``layout`` defines the used layout-file.
@@ -15,6 +15,33 @@ Some soultions like the shortcodes and some filters were taken from the great st
 - ``permalink`` will overwrite the usual filename. This is an eleventy-variable.
 - ``bodyClass`` will become the class of the ``body``-element
 - ``eleventyNavigation`` has a least one attribute: ``key`` which sorts the page to a navigation category. A second possible option is ``order``. More about the navigation-plugin can be found [in the documentation](https://www.11ty.dev/docs/plugins/navigation/).
+
+## Markdown-It
+
+The extension ``markdown-it-attrs`` makes it possible to add attributes (classes, data-attributes, id ...) to elements in a markdown file.
+
+input:
+````md
+# This is a title {.c-article-section__title}
+This is a paragraph with data-state {data-state=important}
+
+Another text with attributes {.c-article-section__disclaimer #articleId attr=value attr2="spaced value"}
+
+![Alt text](image.jpg){.u-shadow}
+
+[Link in a new tab](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a){target="_blank" rel="noopener"}
+````
+
+output:
+
+````html
+<h1 class="c-article-section__title">This is a title</h1>
+<p data-state=important>This is a paragraph with data-state</p>
+<p class="c-article-section__disclaimer" id="articleId" attr=value attr2="spaced value">Another text with attributes</p>
+
+<img class="u-shadow" src="image.jpg" alt="Alt text">
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank" rel="noopener">Link in a new tab</a>
+````
 
 ## Helpful 11ty-links
 

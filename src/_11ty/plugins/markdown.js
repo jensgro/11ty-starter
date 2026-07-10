@@ -5,6 +5,7 @@ const markdownItClass = require('@toycode/markdown-it-class');
 const markdownItFootnote = require('markdown-it-footnote');
 const markdownitMark = require('markdown-it-mark');
 const markdownitAbbr = require('markdown-it-abbr');
+const markdownItAttrs = require('markdown-it-attrs');
 const {slugifyString} = require('../utils');
 
 const markdownLib = markdownIt({
@@ -30,6 +31,7 @@ const markdownLib = markdownIt({
   })
   .use(markdownItFootnote)
   .use(markdownitMark)
-  .use(markdownitAbbr);
+  .use(markdownitAbbr)
+  .use(markdownItAttrs);
 
 module.exports = markdownLib;
