@@ -1,0 +1,314 @@
+/**
+ * Zusammengekürzt aus:
+ * https: //semantic-props.style
+ * Original file: /npm/semantic-props@2.1.0/dist/import.css
+ */
+
+:root {
+  --line: solid;
+  --small-radius: 0.5rem;
+  --medium-radius: 1.25rem;
+  --large-radius: 2rem;
+  --white: #fff;
+  --black: #000;
+
+  --blue-100: #e1f1fd;
+  --blue-200: #a9d6f7;
+  --blue-300: #72bbec;
+  --blue-400: #399edc;
+  --blue-500: #0081be;
+  --blue-600: #006495;
+  --blue-700: #00496f;
+  --blue-800: #00304a;
+  --blue-900: #001829;
+
+  --brown-100: #f3edea;
+  --brown-200: #dcccc3;
+  --brown-300: #c5ac9f;
+  --brown-400: #ac8e7e;
+  --brown-500: #91715f;
+  --brown-600: #755645;
+  --brown-700: #593d2d;
+  --brown-800: #3c261a;
+  --brown-900: #21120a;
+
+  --coral-100: #ffe9e2;
+  --coral-200: #ffbea8;
+  --coral-300: #fa926d;
+  --coral-400: #e96837;
+  --coral-500: #cc4600;
+  --coral-600: #a13500;
+  --coral-700: #772500;
+  --coral-800: #501600;
+  --coral-900: #2c0800;
+
+  --cyan-100: #dff4ef;
+  --cyan-200: #a1ded1;
+  --cyan-300: #5ec7b4;
+  --cyan-400: #00ad98;
+  --cyan-500: #008d7b;
+  --cyan-600: #006e60;
+  --cyan-700: #005046;
+  --cyan-800: #00352d;
+  --cyan-900: #001b17;
+
+  --gray-100: #eeeeef;
+  --gray-200: #ced0d3;
+  --gray-300: #afb2b6;
+  --gray-400: #92959a;
+  --gray-500: #75797f;
+  --gray-600: #5b5e64;
+  --gray-700: #414549;
+  --gray-800: #2a2c30;
+  --gray-900: #141619;
+
+  --green-100: #e0f5e4;
+  --green-200: #a7e0b2;
+  --green-300: #6cca83;
+  --green-400: #24b157;
+  --green-500: #009142;
+  --green-600: #007232;
+  --green-700: #005323;
+  --green-800: #003714;
+  --green-900: #001d07;
+
+  --indigo-100: #e8eeff;
+  --indigo-200: #beceff;
+  --indigo-300: #94aeff;
+  --indigo-400: #6d8bfe;
+  --indigo-500: #4f6aea;
+  --indigo-600: #364bcc;
+  --indigo-700: #232fa6;
+  --indigo-800: #14177a;
+  --indigo-900: #07064a;
+
+  --lime-100: #ecf1e0;
+  --lime-200: #cad7a7;
+  --lime-300: #a9bc70;
+  --lime-400: #8ba03a;
+  --lime-500: #6f8400;
+  --lime-600: #566700;
+  --lime-700: #3e4b00;
+  --lime-800: #283100;
+  --lime-900: #131900;
+
+  --magenta-100: #fbe7f9;
+  --magenta-200: #f1bceb;
+  --magenta-300: #e291db;
+  --magenta-400: #ce68c6;
+  --magenta-500: #b441ae;
+  --magenta-600: #971b92;
+  --magenta-700: #73006f;
+  --magenta-800: #4d004b;
+  --magenta-900: #2a0029;
+
+  --orange-100: #fceae1;
+  --orange-200: #f4c4aa;
+  --orange-300: #e69f76;
+  --orange-400: #d37b46;
+  --orange-500: #ba5910;
+  --orange-600: #944300;
+  --orange-700: #6e3000;
+  --orange-800: #4a1e00;
+  --orange-900: #280d00;
+
+  --pink-100: #f9eaec;
+  --pink-200: #ebc5c9;
+  --pink-300: #d9a0a8;
+  --pink-400: #c37e89;
+  --pink-500: #aa5f6c;
+  --pink-600: #8d4451;
+  --pink-700: #6d2b39;
+  --pink-800: #4c1723;
+  --pink-900: #2b0810;
+
+  --red-100: #ffe9e5;
+  --red-200: #ffbdb2;
+  --red-300: #fc8f7d;
+  --red-400: #ec6351;
+  --red-500: #d33828;
+  --red-600: #b10b00;
+  --red-700: #840600;
+  --red-800: #590200;
+  --red-900: #320100;
+
+  --violet-100: #eeecfe;
+  --violet-200: #cec9f9;
+  --violet-300: #b1a7ee;
+  --violet-400: #9486de;
+  --violet-500: #7966c8;
+  --violet-600: #5f49ab;
+  --violet-700: #463088;
+  --violet-800: #2e1a62;
+  --violet-900: #18093a;
+
+  --yellow-100: #f4eedd;
+  --yellow-200: #e0cf9f;
+  --yellow-300: #cbaf62;
+  --yellow-400: #b4901c;
+  --yellow-500: #947500;
+  --yellow-600: #735b00;
+  --yellow-700: #554200;
+  --yellow-800: #382a00;
+  --yellow-900: #1d1500;
+
+  --accent-100: var(--blue-100);
+  --accent-200: var(--blue-200);
+  --accent-300: var(--blue-300);
+  --accent-400: var(--blue-400);
+  --accent-500: var(--blue-500);
+  --accent-600: var(--blue-600);
+  --accent-700: var(--blue-700);
+  --accent-800: var(--blue-800);
+  --accent-900: var(--blue-900);
+
+  --background-color: var(--white);
+  --middleground-color: var(--gray-100);
+  --foreground-color: var(--gray-200);
+  --low-contrast-color: var(--gray-500);
+  --medium-contrast-color: var(--gray-700);
+  --high-contrast-color: var(--black)
+}
+
+
+@media (prefers-color-scheme:dark) {
+  :root {
+    --background-color: var(--black);
+    --middleground-color: var(--gray-900);
+    --foreground-color: var(--gray-800);
+    --medium-contrast-color: var(--gray-300);
+    --high-contrast-color: var(--white)
+  }
+}
+
+:root {
+  --light-blur: blur(4px);
+  --medium-blur: blur(8px);
+  --heavy-blur: blur(16px);
+
+  --low-brightness: brightness(0.75);
+  --high-brightness: brightness(1.25);
+  --low-contrast: contrast(0.75);
+  --high-contrast: contrast(1.25);
+  --weak-grayscale: grayscale(0.5);
+  --medium-grayscale: grayscale(0.75);
+  --strong-grayscale: grayscale(1);
+  --low-hue-rotate: hue-rotate(30deg);
+  --high-hue-rotate: hue-rotate(300deg);
+  --weak-invert: invert(0.6);
+  --medium-invert: invert(0.8);
+  --strong-invert: invert(1);
+  --low-saturation: saturate(0.75);
+  --high-saturation: saturate(1.25);
+  --weak-sepia: sepia(0.5);
+  --medium-sepia: sepia(0.75);
+  --strong-sepia: sepia(1);
+
+  --body-family: system-ui, sans-serif;
+  --display-family: var(--body-family);
+  --mono-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  --accent-family: var(--body-family);
+
+  --thin-weight: 100;
+  --light-weight: 300;
+  --regular-weight: 400;
+  --bold-weight: 700;
+  --heavy-weight: 900;
+
+  --tight-letter: -0.05em;
+  --normal-letter: normal;
+  --wide-letter: 0.1em;
+  --short-line: 1.2;
+  --normal-line: 1.6;
+  --tall-line: 2;
+
+  --tight-word: -0.1em;
+  --normal-word: normal;
+  --wide-word: 0.2em;
+
+  --low-opacity: 0.4;
+  --medium-opacity: 0.6;
+  --high-opacity: 0.8;
+
+  --square-ratio: 1/1;
+  --landscape-ratio: 4/3;
+  --portrait-ratio: 3/4;
+  --video-ratio: 16/9;
+  --wide-ratio: 21/9;
+  --safe-top: 0;
+  --safe-right: 0;
+  --safe-bottom: 0;
+  --safe-left: 0
+}
+
+@supports (top:env(safe-area-inset-top)) {
+  :root {
+    --safe-top: env(safe-area-inset-top);
+    --safe-right: env(safe-area-inset-right);
+    --safe-bottom: env(safe-area-inset-bottom);
+    --safe-left: env(safe-area-inset-left)
+  }
+}
+
+:root {
+  --safe: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
+  --safe-x: 0 var(--safe-right) 0 var(--safe-left);
+  --safe-y: var(--safe-top) 0 var(--safe-bottom) 0;
+  --safe-header: var(--safe-top) var(--safe-right) 0 var(--safe-left);
+  --safe-body: var(--safe-x);
+  --safe-footer: 0 var(--safe-right) var(--safe-bottom) var(--safe-left);
+  --light-text-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+  --medium-text-shadow: 0 6px 12px rgba(0, 0, 0, .2);
+  --heavy-text-shadow: 0 8px 16px rgba(0, 0, 0, .3);
+  --light-box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+  --medium-box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
+  --heavy-box-shadow: 0 8px 16px rgba(0, 0, 0, .3);
+  --light-inset-shadow: inset 0 4px 8px rgba(0, 0, 0, .1);
+  --medium-inset-shadow: inset 0 6px 12px rgba(0, 0, 0, .2);
+  --heavy-inset-shadow: inset 0 8px 16px rgba(0, 0, 0, .3);
+  --light-shadow: drop-shadow(0 4px 8px rgba(0, 0, 0, .1));
+  --medium-shadow: drop-shadow(0 6px 12px rgba(0, 0, 0, .2));
+  --heavy-shadow: drop-shadow(0 8px 16px rgba(0, 0, 0, .3));
+  --3x-small-container: 8rem;
+  --2x-small-container: 10rem;
+  --x-small-container: 15rem;
+  --small-container: 20rem;
+  --medium-container: 30rem;
+  --large-container: 48rem;
+  --x-large-container: 64rem;
+  --2x-large-container: 80rem;
+  --3x-large-container: 90rem;
+  --3x-small: 0.25rem;
+  --2x-small: 0.5rem;
+  --x-small: 0.75rem;
+  --small: 0.875rem;
+  --medium: 1rem;
+  --large: 1.125rem;
+  --x-large: 1.25rem;
+  --2x-large: 1.5rem;
+  --3x-large: 1.875rem;
+  --4x-large: 2.25rem;
+  --5x-large: 3rem;
+  --6x-large: 3.75rem;
+  --7x-large: 4.5rem;
+  --8x-large: 6rem;
+  --9x-large: 8rem;
+  --smaller: 0.875em;
+  --larger: 1.125em;
+  --margin-size: 5%;
+  --ease: ease;
+  --ease-in: ease-in;
+  --ease-out: ease-out;
+  --ease-in-out: ease-in-out;
+  --fast-time: 150ms;
+  --normal-time: 300ms;
+  --slow-time: 500ms;
+  --small-scale: 0.95;
+  --large-scale: 1.05;
+  --z-bottom: -1000;
+  --z-relative: 1000;
+  --z-absolute: 2000;
+  --z-sticky: 3000;
+  --z-fixed: 4000;
+  --z-top: 5000
+}
