@@ -1,22 +1,22 @@
 <!doctype html>
-<html lang="{{metadata.lang}}">
+<html lang="{{ metadata.lang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ renderData.title or title or metadata.title }}</title>
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url  }}">
+    <meta name="color-scheme" content="dark light"/>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
   </head>
   <body class="{{ bodyClass }}">
-      {% include "partials/navigation.njk" %}
-      {% include "partials/site-header.njk" %}
-      {{ content | safe }}
-      {% include "partials/footer.njk" %}
-
+    {% include "partials/navigation.njk" %}
+    {% include "partials/site-header.njk" %}
+    {{ content | safe }}
+    {% include "partials/footer.njk" %}
     <!-- youtube if actvated in yaml -->
     {% if youtube %}
-    <script type="module" src="/assets/js/lite-youtube.min.js"></script>
+      <script type="module" src="/assets/js/lite-youtube.min.js"></script>
     {% endif %}
   </body>
 </html>
