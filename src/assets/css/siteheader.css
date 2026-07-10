@@ -1,6 +1,6 @@
 .siteheader {
   --headline-bgcolor: rgba(0, 0, 0, 0.125);
-  --headline-color: var(--white-base);
+  --headline-color: var(--white);
 
   aspect-ratio: 7 / 2;
   position: relative;

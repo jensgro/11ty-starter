@@ -1,4 +1,35 @@
 :root {
+  --body-family: system-ui, sans-serif;
+  --display-family: var(--body-family);
+  --mono-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  --accent-family: var(--body-family);
+
+  --body-width: 80%;
+  --max-width: 1120px;
+
+  --thin-weight: 100;
+  --light-weight: 300;
+  --regular-weight: 400;
+  --bold-weight: 700;
+  --heavy-weight: 900;
+
+  --tight-letter: -0.05em;
+  --normal-letter: normal;
+  --wide-letter: 0.1em;
+  --short-line: 1.2;
+  --normal-line: 1.6;
+  --tall-line: 2;
+
+  --tight-word: -0.1em;
+  --normal-word: normal;
+  --wide-word: 0.2em;
+
+  --line: solid;
+  --small-radius: 4px;
+  --medium-radius: 8xp;
+  --large-radius: 12px;
+
+  --space-05: cal(var(--space-1)*0.5);
   --space-1: 6px;
   --space-2: calc(var(--space-1)*2);
   --space-3: calc(var(--space-1)*3);
@@ -7,49 +38,95 @@
   --space-6: calc(var(--space-1)*6);
   --padding: 1rem;
 
-  --body-width: 80%;
-  --maxwidth: 1120px;
+  --square-ratio: 1/1;
+  --landscape-ratio: 4/3;
+  --portrait-ratio: 3/4;
+  --video-ratio: 16/9;
+  --wide-ratio: 21/9;
+  --safe-top: 0;
+  --safe-right: 0;
+  --safe-bottom: 0;
+  --safe-left: 0;
+
   --box-shadow-1: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  --border-1: 1px solid var(--border-color-1);
 
-  --lightgrey: #efefef;
-  --myred: #a20000;
-  --eggshell: #e6e3d4;
-  --ash-grey: #b3cbb9;
-  --pearl: #ddd8b8;
-  --ultra-violet: #6a66a3;
-  --eminence: #542e71;
-
-  --black-base: #000;
-  --white-base: #fff;
-  --white-nearly: #fafafa;
-  --brown-base: brown;
-  --brown-medium: sandybrown;
-  --orange-base: #fd8700;
-  --orange-medium: #ffb30e;
-  --orange-light: #ff30a5;
-  --yellow-base: yellow;
-  --yellow-loght: #ffc;
-  --red-base: #c5004a;
-  --red-my: #a20000;
-  --red-dark: #7f0036;
-  --grey-base: #c0c0c0;
-  --grey-light: #e0e0e0;
-  --grey-lighter: #f7f7f7;
-  --grey-dark: #333;
-  --grey-darker: #aaa;
-  --blue-base: #0b4396;
-  --blue-light1: #a0cbe4;
-  --blue-light2: #c0e7fe;
-  --blue-medium: #0277BD;
-  --blue-dark: #082840;
-  --blue-navy: #17050F;
-  --green-base: teal;
-
-  --primary-text-color: var(--black-base);
-  --btn-secondary-text-color: var(--grey-dark);
+  --primary-text-color: var(--black);
+  --btn-secondary-text-color: var(--gray-700);
   --btn-border-radius: 4px;
   --btn-text-transform: uppercase;
   --btn-font-size: 1rem;
   --btn-font-weight: 600;
-  --btn-padding: var(var(--space-1) var(var(--space-3)))
+  --btn-padding: var(var(--space-1) var(var(--space-3)));
+}
+
+:root {
+  /* light */
+  --brand: var(--orange-600);
+  --text-1: var(--gray-800);
+  --text-2: var(--gray-700);
+  --surface-1: var(--white-nearly);
+  --surface-2: var(--gray-100);
+  --surface-3: var(--gray-200);
+  --surface-4: var(--gray-300);
+  --surface-shadow: var(--gray-750);
+  --shadow-strength: 2%;
+  --code: var(--black);
+  --variable: var(--green-400);
+  --border-color-1: var(--gray-200);
+  --button-bg: var(--gray-200);
+  --button-text: var(--gray-900);
+  --button-bg-hover: var(--gray-400);
+  --form-placeholder: var(--gray-400);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: var(--orange-400);
+    --text-1: var(--gray-300);
+    --text-2: var(--gray-400);
+    --surface-1: var(--gray-800);
+    --surface-2: var(--gray-700);
+    --surface-3: var(--gray-600);
+    --surface-4: var(--gray-500);
+    --surface-shadow: var(--gray-810);
+    --shadow-strength: 20%;
+    --code: var(--yellow-300);
+    --variable: var(--magenta-400);
+    --border-color-1: var(--violet-600);
+    --button-bg: var(--gray-900);
+    --button-text: var(--gray-200);
+    --button-bg-hover: var(--gray-700);
+    --form-placeholder: var(--gray-400);
+  }
+}
+
+:root {
+  --safe: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
+  --safe-x: 0 var(--safe-right) 0 var(--safe-left);
+  --safe-y: var(--safe-top) 0 var(--safe-bottom) 0;
+  --safe-header: var(--safe-top) var(--safe-right) 0 var(--safe-left);
+  --safe-body: var(--safe-x);
+  --safe-footer: 0 var(--safe-right) var(--safe-bottom) var(--safe-left);
+}
+
+@supports (top:env(safe-area-inset-top)) {
+  :root {
+    --safe-top: env(safe-area-inset-top);
+    --safe-right: env(safe-area-inset-right);
+    --safe-bottom: env(safe-area-inset-bottom);
+    --safe-left: env(safe-area-inset-left)
+  }
+}
+
+:root {
+  --ease: ease;
+  --ease-in: ease-in;
+  --ease-out: ease-out;
+  --ease-in-out: ease-in-out;
+  --fast-time: 150ms;
+  --normal-time: 300ms;
+  --slow-time: 500ms;
+  --small-scale: 0.95;
+  --large-scale: 1.05;
 }

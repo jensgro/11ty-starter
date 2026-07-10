@@ -1,10 +1,10 @@
 .main-nav {
-  --mainNavBgCol: var(--grey-darker);
-  --mainNavItemText: var(--black-base);
-  --mainNavItemBgCol: var(--white-base);
+  --mainNavBgCol: var(--gray-300);
+  --mainNavItemText: var(--black);
+  --mainNavItemBgCol: var(--white);
   --inactiveNavBgHover: var(--grey-base);
-  --activeNavBG: var(--red-my);
-  --activeNavText: var(--white-base);
+  --activeNavBG: var(--red-600);
+  --activeNavText: var(--white);
 
   &, .container {background-color: var(--mainNavBgCol);}
 
